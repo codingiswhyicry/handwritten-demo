@@ -15,6 +15,22 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func detectText() {
         
+        var request = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
+        request.reportCharacterBoxes = true
+        self.requests = [request]
+        
+        
+    }
+    
+    func detectTextHandler(request: VNRequest, error: Error?) {
+        
+        guard let observations = request.results else {
+            //no results returned
+            return
+        }
+        
+        let result = observations.map({$0 as? VNTextObservation})
+        
     }
     
     func startSession() {
@@ -53,6 +69,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         })
         
         startSession()
+        detectText()
     }
     
     override func viewDidLayoutSubviews() {

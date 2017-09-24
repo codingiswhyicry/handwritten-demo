@@ -12,6 +12,11 @@ import AVFoundation
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
+    
+    func detectText() {
+        
+    }
+    
     func startSession() {
         
         session.sessionPreset = AVCaptureSession.Preset.photo
@@ -31,17 +36,35 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         imageView.layer.addSublayer(imageLayer)
         
         session.startRunning()
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        imageView.alpha = 0.0
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.imageView.alpha = 1.0
+        })
+        
+        startSession()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        imageView.layer.sublayers?[0].frame = imageView.bounds
     }
     
     @IBOutlet weak var imageView: UIImageView!
-    
     var session = AVCaptureSession()
+    var requests = [VNRequest]()
+    
+    
     
 }
 

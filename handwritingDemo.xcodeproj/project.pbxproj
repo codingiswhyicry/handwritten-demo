@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A74184A703EB1AEDFFC999A /* Pods_handwritingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC68BA21FFBEA5357DFEC33D /* Pods_handwritingDemo.framework */; };
 		9C0C02681F7735D7007B35C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C02671F7735D7007B35C8 /* AppDelegate.swift */; };
 		9C0C026A1F7735D7007B35C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C02691F7735D7007B35C8 /* ViewController.swift */; };
 		9C0C026D1F7735D7007B35C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0C026B1F7735D7007B35C8 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B4CB228644278373F87687B /* Pods-handwritingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-handwritingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-handwritingDemo/Pods-handwritingDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7A1D6338B2C51ED01E4427F6 /* Pods-handwritingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-handwritingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-handwritingDemo/Pods-handwritingDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9C0C02641F7735D7007B35C8 /* handwritingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = handwritingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0C02671F7735D7007B35C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C0C02691F7735D7007B35C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		9C0C026E1F7735D7007B35C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C0C02711F7735D7007B35C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C0C02731F7735D7007B35C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC68BA21FFBEA5357DFEC33D /* Pods_handwritingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_handwritingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A74184A703EB1AEDFFC999A /* Pods_handwritingDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F12C90BDB935CBC30BCDFC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A1D6338B2C51ED01E4427F6 /* Pods-handwritingDemo.debug.xcconfig */,
+				5B4CB228644278373F87687B /* Pods-handwritingDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9C0C025B1F7735D7007B35C8 = {
 			isa = PBXGroup;
 			children = (
 				9C0C02661F7735D7007B35C8 /* handwritingDemo */,
 				9C0C02651F7735D7007B35C8 /* Products */,
+				4F12C90BDB935CBC30BCDFC4 /* Pods */,
+				B4D9DCC13177519C7A6FB38B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = handwritingDemo;
 			sourceTree = "<group>";
 		};
+		B4D9DCC13177519C7A6FB38B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC68BA21FFBEA5357DFEC33D /* Pods_handwritingDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C0C02761F7735D7007B35C8 /* Build configuration list for PBXNativeTarget "handwritingDemo" */;
 			buildPhases = (
+				2C3D7EFC782378A97E9B11CF /* [CP] Check Pods Manifest.lock */,
 				9C0C02601F7735D7007B35C8 /* Sources */,
 				9C0C02611F7735D7007B35C8 /* Frameworks */,
 				9C0C02621F7735D7007B35C8 /* Resources */,
+				5A38BDD745F880C9A871BB4E /* [CP] Embed Pods Frameworks */,
+				8E9044390A8112053A7710DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C3D7EFC782378A97E9B11CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A38BDD745F880C9A871BB4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-handwritingDemo/Pods-handwritingDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E9044390A8112053A7710DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-handwritingDemo/Pods-handwritingDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C0C02601F7735D7007B35C8 /* Sources */ = {
@@ -272,6 +347,7 @@
 		};
 		9C0C02771F7735D7007B35C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A1D6338B2C51ED01E4427F6 /* Pods-handwritingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +363,7 @@
 		};
 		9C0C02781F7735D7007B35C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B4CB228644278373F87687B /* Pods-handwritingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

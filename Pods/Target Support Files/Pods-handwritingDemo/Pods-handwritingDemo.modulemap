@@ -1,0 +1,6 @@
+framework module Pods_handwritingDemo {
+  umbrella header "Pods-handwritingDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

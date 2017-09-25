@@ -1,0 +1,6 @@
+framework module FlexibleImage {
+  umbrella header "FlexibleImage-umbrella.h"
+
+  export *
+  module * { export * }
+}

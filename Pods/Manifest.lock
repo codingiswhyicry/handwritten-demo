@@ -1,3 +1,12 @@
-PODFILE CHECKSUM: ce0c126e28290c83f7eadefa00787c0ba55f7a51
+PODS:
+  - FlexibleImage (1.7)
+
+DEPENDENCIES:
+  - FlexibleImage (~> 1.7)
+
+SPEC CHECKSUMS:
+  FlexibleImage: f91d3181a55284608dd26be083e8c5ceeea6c0c9
+
+PODFILE CHECKSUM: fa51ec11740b3a31d16a96b3b54062b28acabf27
 
 COCOAPODS: 1.2.1

@@ -6,5 +6,6 @@ target 'handwritingDemo' do
   use_frameworks!
 
   # Pods for handwritingDemo
+  pod 'FlexibleImage', '~> 1.7'
 
 end

@@ -13,6 +13,14 @@ import CoreML
 
 class ViewController: UIViewController {
 
+    func charProcessing() {
+        
+        
+        
+        
+        
+        
+    }
     
     func detectText() {
         

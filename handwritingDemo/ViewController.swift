@@ -49,18 +49,19 @@ class ViewController: UIViewController {
         let result = observations.map({$0 as? VNTextObservation})
         
         DispatchQueue.main.async() {
-            
             self.imageView.layer.sublayers?.removeSubrange(1...)
-            
             for region in result {
-                
                 guard let rg = region else {
-                
-                    //no regions found :(
-                   continue
+                    continue
                 }
                 
                 self.detectWord(box: rg)
+                
+                if let boxes = region?.characterBoxes {
+                    for characterBox in boxes {
+                       // numberRecognition(image: nil)
+                    }
+                }
             }
         }
     }
@@ -147,6 +148,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     var session = AVCaptureSession()
+    var output = AVCapturePhotoOutput()
     var requests = [VNRequest]()
     
     @IBOutlet weak var backView: UIView!
@@ -177,6 +179,25 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         do { try image_request_handler.perform(self.requests)  }
         catch { print (error) }
         
+    }
+}
+
+extension ViewController: AVCapturePhotoCaptureDelegate {
+    
+    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        
+        if let error = error {
+            print("Error capturing photo: \(error)")
+        } else  {
+            
+            if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
+                
+                if UIImage(data: dataImage) != nil {
+                    
+                
+                }
+            }
+        }
     }
 }
 

@@ -14,6 +14,7 @@
 		9C0C026F1F7735D7007B35C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0C026E1F7735D7007B35C8 /* Assets.xcassets */; };
 		9C0C02721F7735D7007B35C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0C02701F7735D7007B35C8 /* LaunchScreen.storyboard */; };
 		9C7991951F78C4EA00E05773 /* filterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7991941F78C4EA00E05773 /* filterController.swift */; };
+		9C7991981F78D63200E05773 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9C7991971F78D62900E05773 /* MNIST.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9C0C02711F7735D7007B35C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C0C02731F7735D7007B35C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C7991941F78C4EA00E05773 /* filterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterController.swift; sourceTree = "<group>"; };
+		9C7991971F78D62900E05773 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
 		AC68BA21FFBEA5357DFEC33D /* Pods_handwritingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_handwritingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 		9C0C02661F7735D7007B35C8 /* handwritingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9C7991971F78D62900E05773 /* MNIST.mlmodel */,
 				9C0C02671F7735D7007B35C8 /* AppDelegate.swift */,
 				9C0C02691F7735D7007B35C8 /* ViewController.swift */,
 				9C7991941F78C4EA00E05773 /* filterController.swift */,
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7991981F78D63200E05773 /* MNIST.mlmodel in Sources */,
 				9C0C026A1F7735D7007B35C8 /* ViewController.swift in Sources */,
 				9C7991951F78C4EA00E05773 /* filterController.swift in Sources */,
 				9C0C02681F7735D7007B35C8 /* AppDelegate.swift in Sources */,

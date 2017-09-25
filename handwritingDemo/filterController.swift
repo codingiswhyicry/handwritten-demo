@@ -25,9 +25,8 @@ class filterController: UIViewController {
     @IBAction func filterAction(_ sender: Any) {
         
         let pipeline_f = ImagePipeline()
-            .contrast()
+            .greyscale()
             .invert()
-            .hardMix(color: UIColor.darkGray)
         
         let new_image = pipeline_f.image(image1)
         imageView.image = new_image!

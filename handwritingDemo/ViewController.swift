@@ -14,41 +14,26 @@ import FlexibleImage
 
 class ViewController: UIViewController {
 
-    func wordConversion() {
+    func numberRecognition(image: CVPixelBuffer) {
         
-        //take each invidual character from the word and create three words with probability
+        let model = MNIST()
         
-        //for each character within the word, string them together
-    
+        guard let digit_output = try? model.prediction(image: image) else {
+            
+            print("unable to read")
+            return
+        }
         
-    }
-    
-    
-    func charProcessing(image: UIImage) -> String {
+        let prediction = digit_output.prediction
+        let confidence = digit_output.classLabel
         
-        var char: String = ""
-        
-        let pipeline = ImagePipeline()
-            .contrast()
-            .invert()
-            .image()
-    
-        // var filteredImage = pipeline.image(image)
-        
-        // turn each individual character into a UIImage
-        
-        // filter character
-        
-        //input character into MLModel
-        
-        //return char and set the value of char
-        
-        return char
+        digitLabel.text = "\(prediction)"
+        confidenceLabel.text = "\(confidenceLabel)%"
     }
     
     func detectText() {
         
-        var request = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
+        let request = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
         request.reportCharacterBoxes = true
         self.requests = [request]
     }
@@ -76,7 +61,6 @@ class ViewController: UIViewController {
                 }
                 
                 self.detectWord(box: rg)
-                
             }
         }
     }
@@ -106,7 +90,7 @@ class ViewController: UIViewController {
             let width = (minX - maxX) * imageView.frame.size.width
             let height = (minY - maxY) * imageView.frame.size.height
             
-            var highlight = CALayer()
+            let highlight = CALayer()
             highlight.frame = CGRect(x: x_co, y: y_co, width: width, height: height)
             highlight.borderWidth = 1
             highlight.cornerRadius = 3
@@ -131,7 +115,7 @@ class ViewController: UIViewController {
         session.addInput(device_in)
         session.addOutput(device_out)
         
-        var imageLayer = AVCaptureVideoPreviewLayer(session: session)
+        let imageLayer = AVCaptureVideoPreviewLayer(session: session)
         imageLayer.frame = imageView.bounds
         imageView.layer.addSublayer(imageLayer)
         
@@ -164,6 +148,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var session = AVCaptureSession()
     var requests = [VNRequest]()
+    
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var digitLabel: UILabel!
+    @IBOutlet weak var confidenceLabel: UILabel!
 
 }
 

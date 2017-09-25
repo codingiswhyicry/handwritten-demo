@@ -59,18 +59,18 @@ internal class ImageFilter {
                     
                     // Add command queue
                     let commandBuffer = device.commandQueue.makeCommandBuffer()
-                    let commandEncoder = commandBuffer.makeComputeCommandEncoder()
+                    let commandEncoder = commandBuffer?.makeComputeCommandEncoder()
                     
                     if let pipeline = self.metalPipeline as? MTLComputePipelineState {
                         // Set pipeline
-                        commandEncoder.setComputePipelineState(pipeline)
+                        commandEncoder?.setComputePipelineState(pipeline)
                         
                         // Set texture
-                        commandEncoder.setTexture(device.outputTexture!, at: 0)
-                        commandEncoder.setTexture(device.texture!, at: 1)
+                        commandEncoder?.setTexture(device.outputTexture!, index: 0)
+                        commandEncoder?.setTexture(device.texture!, index: 1)
                     }
                     
-                    let retValue = self.processMetal(device, commandBuffer, commandEncoder)
+                    let retValue = self.processMetal(device, commandBuffer!, commandEncoder!)
                     device.swapBuffer()
                     
                     return retValue

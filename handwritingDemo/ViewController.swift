@@ -10,16 +10,40 @@ import UIKit
 import Vision
 import AVFoundation
 import CoreML
+import FlexibleImage
 
 class ViewController: UIViewController {
 
-    func charProcessing() {
+    func wordConversion() {
         
+        //take each invidual character from the word and create three words with probability
         
+        //for each character within the word, string them together
+    
         
+    }
+    
+    
+    func charProcessing(image: UIImage) -> String {
         
+        var char: String = ""
         
+        let pipeline = ImagePipeline()
+            .contrast()
+            .invert()
+            .image()
+    
+        // var filteredImage = pipeline.image(image)
         
+        // turn each individual character into a UIImage
+        
+        // filter character
+        
+        //input character into MLModel
+        
+        //return char and set the value of char
+        
+        return char
     }
     
     func detectText() {
@@ -27,7 +51,6 @@ class ViewController: UIViewController {
         var request = VNDetectTextRectanglesRequest(completionHandler: self.detectTextHandler)
         request.reportCharacterBoxes = true
         self.requests = [request]
-        
     }
     
     func detectTextHandler(request: VNRequest, error: Error?) {

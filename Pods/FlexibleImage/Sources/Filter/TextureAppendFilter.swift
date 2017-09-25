@@ -83,7 +83,7 @@ internal class TextureAppendFilter: ImageFilter {
                 mipmapped: false
             )
             let texture = device.makeTexture(descriptor: descriptor)
-            texture.replace(
+            texture?.replace(
                 region: MTLRegionMake2D(0, 0, width, height),
                 mipmapLevel: 0,
                 withBytes: memoryPool,
@@ -104,7 +104,7 @@ internal class TextureAppendFilter: ImageFilter {
             self.makeTexture(device.device)
             
             let texture = self.texture as! MTLTexture
-            commandEncoder.setTexture(texture, at: 2)
+            commandEncoder.setTexture(texture, index: 2)
             
             let factors: [Float] = [
                 Float(texture.width),
@@ -128,7 +128,7 @@ internal class TextureAppendFilter: ImageFilter {
                     length: size,
                     options: options
                 )
-                commandEncoder.setBuffer(buffer, offset: 0, at: i)
+                commandEncoder.setBuffer(buffer, offset: 0, index: i)
             }
             
             return super.processMetal(device, commandBuffer, commandEncoder)

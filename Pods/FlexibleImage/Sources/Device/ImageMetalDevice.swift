@@ -123,7 +123,7 @@
             )
             
             let texture = self.device.makeTexture(descriptor: descriptor)
-            texture.replace(
+            texture?.replace(
                 region: MTLRegionMake2D(0, 0, width, height),
                 mipmapLevel: 0,
                 withBytes: memoryPool,
@@ -277,7 +277,7 @@
             #endif
             
             // Make command queue
-            self.commandQueue = self.device.makeCommandQueue()
+            self.commandQueue = self.device.makeCommandQueue()!
             
             super.init()
             

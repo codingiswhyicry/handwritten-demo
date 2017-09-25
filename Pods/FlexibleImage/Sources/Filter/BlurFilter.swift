@@ -86,7 +86,7 @@
                     mipmapped: false
                 )
                 let texture = device.makeTexture(descriptor: descriptor)
-                texture.replace(
+                texture?.replace(
                     region: MTLRegionMake2D(0, 0, size, size),
                     mipmapLevel: 0,
                     withBytes: rawData,
@@ -122,10 +122,10 @@
                 let factors: [Float] = [self.radius]
                 
                 if let texture = self.weightTexture as? MTLTexture {
-                    commandEncoder.setTexture(texture, at: 2)
+                    commandEncoder.setTexture(texture, index: 2)
                 } else {
                     self.makeWeightTexture(device.device)
-                    commandEncoder.setTexture(self.weightTexture as? MTLTexture, at: 2)
+                    commandEncoder.setTexture(self.weightTexture as? MTLTexture, index: 2)
                 }
                 
                 for i in 0..<factors.count {
@@ -144,7 +144,7 @@
                         length: size,
                         options: options
                     )
-                    commandEncoder.setBuffer(buffer, offset: 0, at: i)
+                    commandEncoder.setBuffer(buffer, offset: 0, index: i)
                 }
                 
                 return super.processMetal(device, commandBuffer, commandEncoder)
